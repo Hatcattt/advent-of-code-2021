@@ -1,6 +1,7 @@
 package com.hatcattt.aoc2021;
 
 import java.io.*;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -22,23 +23,42 @@ public class PuzzleDay1 {
         return countIncrease;
     }
 
+    /**
+     * Get the sum of the elements grouped by 3 elements in the list of Integer.
+     * @param integerList list of Integer
+     * @return List<Integer>
+     */
+    static List<Integer> getSumGroupedBy3Elements(List<Integer> integerList) {
+        List<Integer> sum = new ArrayList<>();
+        int sumOf3element = 0;
+
+        for (int i = 0; i < integerList.size() - 2; i++) {
+            sumOf3element += integerList.get(i) + integerList.get(i + 1) + integerList.get(i + 2);
+            sum.add(sumOf3element);
+            sumOf3element = 0;
+        }
+        return sum;
+    }
+
     public static void main(String[] args) {
-        System.out.println("PART ONE:");
 
         String filePath = "src/main/resources/datatxt/day1.txt";
 
         try {
             BufferedReader file = new BufferedReader(new FileReader(filePath));
-
             var datas = file.lines().map(Integer::parseInt).collect(Collectors.toList());
-            var count = getNumberOfIncreaseMeasurement(datas);
 
+            System.out.println("PART ONE:");
+            var count = getNumberOfIncreaseMeasurement(datas);
             System.out.println(count);
+
+            System.out.println("\nPART TWO:");
+            var newDatas = getSumGroupedBy3Elements(datas);
+            var count2 = getNumberOfIncreaseMeasurement(newDatas);
+
+            System.out.println(count2);
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        System.out.println("\nPART TWO:");
-
     }
 }
