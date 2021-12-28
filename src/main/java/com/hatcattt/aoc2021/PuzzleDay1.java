@@ -30,12 +30,9 @@ public class PuzzleDay1 {
      */
     static List<Integer> getSumGroupedBy3Elements(List<Integer> integerList) {
         List<Integer> sum = new ArrayList<>();
-        int sumOf3element = 0;
 
         for (int i = 0; i < integerList.size() - 2; i++) {
-            sumOf3element += integerList.get(i) + integerList.get(i + 1) + integerList.get(i + 2);
-            sum.add(sumOf3element);
-            sumOf3element = 0;
+            sum.add(integerList.get(i) + integerList.get(i + 1) + integerList.get(i + 2));
         }
         return sum;
     }
