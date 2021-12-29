@@ -46,12 +46,12 @@ public class PuzzleDay1 {
             var datas = file.lines().map(Integer::parseInt).collect(Collectors.toList());
 
             System.out.println("PART ONE:");
-            var count = getNumberOfIncreaseMeasurement(datas);
+            int count = getNumberOfIncreaseMeasurement(datas);
             System.out.println(count);
 
             System.out.println("\nPART TWO:");
             var newDatas = getSumGroupedBy3Elements(datas);
-            var count2 = getNumberOfIncreaseMeasurement(newDatas);
+            int count2 = getNumberOfIncreaseMeasurement(newDatas);
 
             System.out.println(count2);
         } catch (IOException e) {
