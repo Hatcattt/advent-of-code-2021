@@ -1,9 +1,9 @@
 package com.hatcattt.aoc2021;
 
+import com.hatcattt.aoc2021.utils.GetDatas;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * Solution of the puzzle day 1 (part one et part two)
@@ -38,24 +38,16 @@ public class PuzzleDay1 {
     }
 
     public static void main(String[] args) {
+        var datas = GetDatas.inputDatasToInt(new File("src/main/resources/datatxt/day1.txt"));
 
-        String filePath = "src/main/resources/datatxt/day1.txt";
+        System.out.println("PART ONE:");
+        int count = getNumberOfIncreaseMeasurement(datas);
+        System.out.println(count);
 
-        try {
-            BufferedReader file = new BufferedReader(new FileReader(filePath));
-            var datas = file.lines().map(Integer::parseInt).collect(Collectors.toList());
+        System.out.println("\nPART TWO:");
+        var newDatas = getSumGroupedBy3Elements(datas);
+        int count2 = getNumberOfIncreaseMeasurement(newDatas);
 
-            System.out.println("PART ONE:");
-            int count = getNumberOfIncreaseMeasurement(datas);
-            System.out.println(count);
-
-            System.out.println("\nPART TWO:");
-            var newDatas = getSumGroupedBy3Elements(datas);
-            int count2 = getNumberOfIncreaseMeasurement(newDatas);
-
-            System.out.println(count2);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        System.out.println(count2);
     }
 }

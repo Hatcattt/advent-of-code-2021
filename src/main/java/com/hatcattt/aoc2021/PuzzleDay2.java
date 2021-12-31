@@ -1,38 +1,28 @@
 package com.hatcattt.aoc2021;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.stream.Collectors;
+import com.hatcattt.aoc2021.utils.GetDatas;
+import java.io.File;
 
 public class PuzzleDay2 {
     public static void main(String[] args) {
-
-        String filePath = "src/main/resources/datatxt/day2.txt";
-        int horizPoz = 0;
+        int horizontalPoz = 0;
         int depth =  0;
         int aim = 0;
 
-        try {
-            BufferedReader file = new BufferedReader(new FileReader(filePath));
-            var datas = file.lines().collect(Collectors.toList());
+        var datas = GetDatas.inputDatasToString(new File("src/main/resources/datatxt/day2.txt"));
 
-            for(var string : datas) {
-                switch (string.split(" ")[0]) {
-                    case "forward" -> {
-                        horizPoz += Integer.parseInt(string.split(" ")[1]);
-                        depth += aim * Integer.parseInt(string.split(" ")[1]);
-                    }
-                    case "down" -> aim += Integer.parseInt(string.split(" ")[1]);
-                    case "up" -> aim -= Integer.parseInt(string.split(" ")[1]);
+        for (var string : datas) {
+            switch (string.split(" ")[0]) {
+                case "forward" -> {
+                    horizontalPoz += Integer.parseInt(string.split(" ")[1]);
+                    depth += aim * Integer.parseInt(string.split(" ")[1]);
                 }
+                case "down" -> aim += Integer.parseInt(string.split(" ")[1]);
+                case "up" -> aim -= Integer.parseInt(string.split(" ")[1]);
             }
-
-            int result = horizPoz * depth;
-            System.out.println("horizontal:" + horizPoz + " * " + "depth:" + depth + " = " + result);
-
-        } catch (IOException e) {
-            e.printStackTrace();
         }
+
+        int result = horizontalPoz * depth;
+        System.out.println("horizontal:" + horizontalPoz + " * " + "depth:" + depth + " = " + result);
     }
 }
