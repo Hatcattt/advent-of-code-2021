@@ -4,6 +4,9 @@ import com.hatcattt.aoc2021.utils.GetDatas;
 import java.io.File;
 import java.util.ArrayList;
 
+/**
+ * Solution of the puzzle day 3.
+ */
 public class PuzzleDay3 {
     public static void main(String[] args) {
         var binaryDatas = GetDatas.inputDatasToString(new File("src/main/resources/datatxt/day3.txt"));

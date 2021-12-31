@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 public class GetDatas {
     /**
      * Get a list of String with the datas from a file using Stream API.
-     * @param filePath the file to get datas
+     * @param filePath File : the file to get datas
      * @return list of String (ArrayList).
      */
     public static List<String> inputDatasToString(File filePath) {

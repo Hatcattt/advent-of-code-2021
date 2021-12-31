@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Solution of the puzzle day 1 (part one et part two)
+ * Solution of the puzzle day 1.
  */
 public class PuzzleDay1 {
 

@@ -3,6 +3,9 @@ package com.hatcattt.aoc2021;
 import com.hatcattt.aoc2021.utils.GetDatas;
 import java.io.File;
 
+/**
+ * Solution of the puzzle day 2.
+ */
 public class PuzzleDay2 {
     public static void main(String[] args) {
         int horizontalPoz = 0;
