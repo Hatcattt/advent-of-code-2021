@@ -7,3 +7,4 @@
 
 > [day_1](src/main/java/com/hatcattt/aoc2021/PuzzleDay1.java)
 > [day_2](src/main/java/com/hatcattt/aoc2021/PuzzleDay2.java)
+> [day_3](src/main/java/com/hatcattt/aoc2021/PuzzleDay3.java)
