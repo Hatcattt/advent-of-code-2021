@@ -5,6 +5,6 @@
 
 ------ SOLUTIONS ------
 
-> [day_1](src/main/java/com/hatcattt/aoc2021/PuzzleDay1.java)
-> [day_2](src/main/java/com/hatcattt/aoc2021/PuzzleDay2.java)
-> [day_3](src/main/java/com/hatcattt/aoc2021/PuzzleDay3.java)
+> [day_1](src/main/java/com/hatcattt/aoc2021/puzzles/Day1.java)
+> [day_2](src/main/java/com/hatcattt/aoc2021/puzzles/Day2.java)
+> [day_3](src/main/java/com/hatcattt/aoc2021/puzzles/Day3.java)
